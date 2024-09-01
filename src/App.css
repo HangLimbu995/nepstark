@@ -1,0 +1,76 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: clamp(1.3rem, 1.3rem + 2vw, 15rem) !important;
+    font-weight: bold !important;
+    text-transform: capitalize;
+}
+
+h2 {
+    font-size: clamp(1.875rem, 3.5vw + 1rem, 3.375rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem);
+}
+
+p {
+    font-size: clamp(1rem, 2.5vw + 0.5rem, 1.25rem);
+    color: #6B7280;
+}
+
+
+button {
+
+    background-image: linear-gradient(to bottom,#256EE3,#5D99F8) !important;
+    color: white;
+}
+
+li {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.top-contact ul li a {
+    display: flex ;
+    gap: 8px;
+    align-items: center;
+}
+
+
+.nav-container {
+    background-color: rgba(255, 255, 255, 0.315);
+    backdrop-filter: blur(40px);
+}
+
+header{
+    background-image: url('https://img.freepik.com/premium-photo/abstract-fade-watercolor-blue-splashes-ink-background-white-paper-with-copy-space-ocean-theme_17221-77.jpg');
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.header-card {
+    position: absolute;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  
+}
+
