@@ -9,10 +9,10 @@ import Test from './pages/Test'
 function App() {
 
   return (
-    <div className='w-full h-full overflow-hidden'>
+    <div className='w-full h-full'>
     <TopContact />
     <Navbar />
-        <Home />
+    <Home />
     </div>
   )
 }

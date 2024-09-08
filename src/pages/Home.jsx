@@ -10,7 +10,7 @@ const Home = () => {
 
   useEffect(() => {
     var typed = new Typed(el.current, {
-      strings: ['Coding', 'Sleeping', 'Eating'],
+      strings: ['sleek', 'dynamic', 'modern'],
       typeSpeed: 150,
       backSpeed: 150,
       loop: true
@@ -37,27 +37,33 @@ const Home = () => {
 
   return (
     <div>
-      <header>
-        <div className='w-full h-[70vh] flex flex-col '>
-          <div className='w-full h-full ml-[10%]  flex flex-col justify-center '>
-            <h1>Creating</h1>
-            <div className='flex items-center gap-5 '>
-              <div className='relative w-[100px]   rounded-[50px] flex items-center justify-center overflow-hidden'>
+      <header className='absolute top-0 w-full h-[100vh] flex flex-col justify-end'>
+        <div className='w-full p-4 md:p-8'>
+          <div className='text-3xl sm:text-5xl md:text-7xl xl:text-9xl capitalize leading-tight'>
+          <h1 className='mb-4 '>
+            Creating
+            <style jsx>{`
+              @keyframes backgroundScroll {
+                from {background-position: 0 0;}
+                to {background-position: -100% 0;}
+              }
+            `}</style>
+          </h1>
+            <div className='flex items-center gap-5 mb-4'>
+              <div className='relative w-20 md:w-40 rounded-full overflow-hidden'>
                 <video
                   loop
                   autoPlay
                   muted
+                  playsInline
                   className='w-full h-full object-cover'
                   src='https://cuberto.com/assets/home/hero/header.mp4'
                 ></video>
               </div>
-
-              <h1 ref={el} className='uppercase'>
-              </h1>
+              <h1 ref={el} className='uppercase font-bold'></h1>
             </div>
-            <h1>websites of future</h1>
+            <h1>websites of the future</h1>
           </div>
-
         </div>
       </header>
     </div>

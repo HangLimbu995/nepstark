@@ -13,12 +13,12 @@ const TopContact = () => {
                 </div>
                 <div>
                     <ul className='flex gap-3 md:gap-7 text-white text-[16px] leading-[24px] font-[600] ' >
-                        <li><a href='tel:+977-9849992404' target='_black'><FaPhoneAlt /><span className='hidden md:flex'>+977-9849992404</span></a>
+                        <li><a href='tel:+977-9849992404' target='_black'><FaPhoneAlt /><span className='hidden lg:flex'>+977-9849992404</span></a>
                         </li>
                         <li><a href="https://wa.me/9779849992404" target='_black'>
-                        <IoLogoWhatsapp /><span className='hidden md:flex'>+977-9849992404</span></a>
+                        <IoLogoWhatsapp /><span className='hidden lg:flex'>+977-9849992404</span></a>
                         </li>
-                        <li><a href='mailto:aakashjungkarki@gmail.com' target='_black'><MdEmail /><span className='hidden md:flex'>Email us</span></a></li>
+                        <li><a href='mailto:aakashjungkarki@gmail.com' target='_black'><MdEmail /><span className='hidden lg:flex'>Email us</span></a></li>
                     </ul>
                 </div>
             </div>

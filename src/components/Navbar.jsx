@@ -3,13 +3,37 @@ import React, { useEffect, useState } from 'react'
 
 // gsap.registerPlugin(ScrollTrigger)
 const Navbar = () => {
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const [navVisible, setNavVisible] = useState(true);
+    const [navTop, setNavTop] = useState(9)
+console.log('nav visible',navVisible)
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            console.log('current scrolly ', currentScrollY)
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                setNavVisible(false)
+                console.log('scroll down')
+            }else if(currentScrollY < 10) {
+                setNavTop(9)
+            }
+             else {
+                setNavVisible(true)
+                console.log('scroll up')
+                setNavTop(0)
+            }
 
+            setLastScrollY(currentScrollY)
+        }
+        console.log('last scroll y ', lastScrollY)
+        window.addEventListener('scroll', handleScroll)
 
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [lastScrollY])
 
     return (
-        <div className='nav-container sticky top-0 w-full h-full py-1' style={{zIndex: 9}}
-       >
-            <nav className="inherit w-full h-full flex justify-around items-center">
+        <div className={`nav-container fixed top-${navTop} left-0 right-0 w-full py-1 bg-blue-300 transition-all ${navVisible ? 'translate-y-0 top-0' : '-translate-y-[100px]'}`} style={{ zIndex: 9 }}>
+            <nav className="w-full flex justify-around items-center">
                 <div>
                     <h1 className='text-2xl font-bold'>logo</h1>
                 </div>
@@ -21,7 +45,7 @@ const Navbar = () => {
                         <li>our services</li>
                     </ul>
                 </div>
-                <button className=' py-3 px-4 rounded text-[15px] font-[600] text-white'>Enquire Now
+                <button className='py-3 px-4 rounded text-[15px] font-[600] text-white'>Enquire Now
                 </button>
             </nav>
         </div>
