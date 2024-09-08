@@ -4,15 +4,16 @@ import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import TopContact from './components/TopContact'
 import ScrollProvider from './components/ScrollProvider'
+import Test from './pages/Test'
 
 function App() {
 
   return (
-    <ScrollProvider>
-      <TopContact />
-      <Navbar />
-      <Home />
-    </ScrollProvider>
+    <div className='w-full h-full overflow-hidden'>
+    <TopContact />
+    <Navbar />
+        <Home />
+    </div>
   )
 }
 

@@ -20,9 +20,7 @@ const WritingText = () => {
     },[]) 
     
   return (
-    <div className="container">
-<h1>I'm <span ref={el} ></span></h1>
-<h1>hello world  how are you</h1>
+    <div ref={el}>
 </div>
 
   )

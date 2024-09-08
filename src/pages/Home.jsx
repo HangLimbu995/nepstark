@@ -1,34 +1,66 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import { gsap, ScrollTrigger } from 'gsap/all'
+import WritingText from '../components/WritingText'
+import Typed from 'typed.js';
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Home = () => {
-  console.log('x value is', headerCard[0].x)
+  const el = useRef(null)
+
+  useEffect(() => {
+    var typed = new Typed(el.current, {
+      strings: ['Coding', 'Sleeping', 'Eating'],
+      typeSpeed: 150,
+      backSpeed: 150,
+      loop: true
+    })
+
+    return () => {
+      typed.destroy()
+    }
+
+  }, [])
+
+  // useEffect(() => {
+  // gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: 'header',
+  //     start:'top top',
+  //     end: '150% 50%',
+  //     pin: true,
+  //     scrub: true,
+  //     markers: true,
+  //   }
+  // })
+  // },[])
 
   return (
-    <>
-      <header className='relative w-full h-full bg-red-500 grid place-items-center'>
-        <div className='w-full md:w-[90%] h-[100vh] p-2 flex justify-center flex-col items-center leading-tight' >
-         <div className='-mt-[50px]' style={{ zIndex: 2 }} data-scroll data-scroll-speed='5'>  
-         <h1 className='-mt-12' > Transform Your Business Digitally</h1>
-         <p >   Empower your brand with cutting-edge websites and dynamic digital marketing strategies.</p>
-         </div>
-          <div >
-            {headerCard.map((item, i) => (
-              <div key={item.id} className={`header-card  `} style={{ left: `${item.x}`, top: `${item.y}`, width: `${item.w}`, height: `${item.h}`, zIndex: 1 }} data-scroll data-scroll-speed='-9'>
-                <video muted loop autoPlay src={`${item.video}`} className='w-full h-full object-cover' />
+    <div>
+      <header>
+        <div className='w-full h-[70vh] flex flex-col '>
+          <div className='w-full h-full ml-[10%]  flex flex-col justify-center '>
+            <h1>Creating</h1>
+            <div className='flex items-center gap-5 '>
+              <div className='relative w-[100px]   rounded-[50px] flex items-center justify-center overflow-hidden'>
+                <video
+                  loop
+                  autoPlay
+                  muted
+                  className='w-full h-full object-cover'
+                  src='https://cuberto.com/assets/home/hero/header.mp4'
+                ></video>
               </div>
-            ))}
 
+              <h1 ref={el} className='uppercase'>
+              </h1>
+            </div>
+            <h1>websites of future</h1>
           </div>
-        </div>
 
-        <div className='hero-container'>
-          <div className='hero'></div>
         </div>
       </header>
-      <section>
-        <div className='w-full h-[200vh]'></div>
-      </section>
-    </>
+    </div>
   )
 }
 
@@ -37,33 +69,37 @@ const headerCard = [
     id: 1,
     video: 'https://cuberto.com/assets/projects/riyadh/cover.mp4',
     x: '15%',
-    y: '12%',
+    y: '15%',
     w: '400px',
     h: '30vh',
+    speed: '-9',
   },
   {
     id: 2,
-    video: 'https://cuberto.com/assets/projects/riyadh/cover.mp4',
+    video: 'https://cuberto.com/assets/projects/puntopago/cover.mp4',
     x: '70%',
     y: '15%',
     w: '500px',
     h: '50vh',
+    speed: '-9',
   },
   {
     id: 3,
-    video: 'https://cuberto.com/assets/projects/riyadh/cover.mp4',
+    video: 'https://cuberto.com/assets/projects/kzero/cover.mp4?2',
     x: '20%',
-    y: '50%',
+    y: '110%',
     w: '300px',
     h: '20vh',
+    speed: '-7',
   },
   {
     id: 4,
-    video: 'https://cuberto.com/assets/projects/riyadh/cover.mp4',
+    video: 'https://cuberto.com/assets/projects/magma/cover.mp4?2',
     x: '60%',
-    y: '55%',
+    y: '125%',
     w: '200px',
     h: '20vh',
+    speed: '-5',
   },
 ]
 

@@ -8,11 +8,11 @@
 html,body{
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 h1 {
-    font-size: clamp(1.3rem, 1.3rem + 2vw, 15rem) !important;
+    font-size: clamp(1.3rem, 1.3rem + 2vw, 118px) !important;
     font-weight: bold !important;
     text-transform: capitalize;
 }
@@ -56,7 +56,7 @@ li {
 }
 
 header{
-    background-image: url('https://img.freepik.com/premium-photo/abstract-fade-watercolor-blue-splashes-ink-background-white-paper-with-copy-space-ocean-theme_17221-77.jpg');
+    
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
@@ -64,13 +64,6 @@ header{
 
 }
 
-.header-card {
-    position: absolute;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-  
+header h1 {
+    font-size: 118px;
 }
-
